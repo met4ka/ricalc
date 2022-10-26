@@ -1,40 +1,73 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<style>
+        input[type='number'] {
+            -moz-appearance:textfield;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+</style>
     <head>
         <title th:text="Main"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css">
+        <title>MAIN</title>
+        <link rel="icon" href="https://cdn.icon-icons.com/icons2/37/PNG/512/calculator_3534.png" sizes="32x32" type="image/png">
     </head>
+<header th:insert="blocks/header :: header"></header>
     <body>
-
-    <header th:insert="blocks/header :: header"></header>
-
     <main>
-<div class="design"></div>
+
         <section class="py-5 text-center container">
-            <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Album example</h1>
-                    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                    </p>
+            <form action="/" method="post">
+                <img src="https://cdn.icon-icons.com/icons2/37/PNG/512/calculator_3534.png" width="40" height="32">
+                <h1 class="h3 mb-3 fw-normal">Please write number</h1>
+<!--                    <input type="text" name="fn" placeholder="First number" class="form-control"><br>-->
+<!--                    <input type="text" name="sn" placeholder="Second number" class="form-control"><br>-->
+<!--                    <input type="text" name="method" placeholder="Method" class="form-control"><br>-->
+<!--                    <input type="text" name="user" placeholder="User" class="form-control"><br>-->
+<!--                    <button class="btn btn-success" type="submit">Result</button>-->
+
+                    <div class="form-floating">
+                        <input type="number" class="form-control" name="fn" id="fn" placeholder="fn">
+                        <label for="fn">First number</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control" name="sn" id="sn" placeholder="sn">
+                        <label for="sn">Second number</label>
+                    </div>
+                <div class="form-floating">
+                    <input type="number" class="form-control" name="user" id="user" placeholder="fn">
+                    <label for="user">user</label>
                 </div>
-            </div>
+                    <fieldset>
+                        <small>Please select your preferred contact method:</small>
+                        <div>
+                            <input type="radio" id="contactChoice1"
+                                   name="method" value="addition" checked>
+                            <label for="contactChoice1" class="h5 mb-3 fw-normal">addition</label>
+
+                            <input type="radio" id="contactChoice2"
+                                   name="method" value="subtraction">
+                            <label for="contactChoice2" class="h5 mb-3 fw-normal">subtraction</label>
+
+                            <input type="radio" id="contactChoice3"
+                                   name="method" value="multiplication">
+                            <label for="contactChoice3" class="h5 mb-3 fw-normal">multiplication</label>
+
+                            <input type="radio" id="contactChoice4"
+                                   name="method" value="division">
+                            <label for="contactChoice4" class="h5 mb-3 fw-normal">division</label>
+                        </div>
+                    </fieldset>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" >RESULT</button>
+            </form>
         </section>
 
-
-
     </main>
-
-    <header th:insert="blocks/footer :: footer"></header>
-
-
-    <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
-
-
-
     </body>
+<footer th:insert="blocks/footer :: footer"></footer>
 </html>
