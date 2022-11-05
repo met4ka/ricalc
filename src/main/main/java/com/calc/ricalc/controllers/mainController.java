@@ -20,8 +20,8 @@ public class mainController {
         return "main";
     }
     @PostMapping("/")
-    public String res(@RequestParam String fn, @RequestParam String sn, @RequestParam String method, @RequestParam String user, Model model) {
-        res res = new res(fn, sn, method, user);
+    public String res(@RequestParam String fn, @RequestParam String sn, @RequestParam String method, @RequestParam String user111, Model model) {
+        res res = new res(fn, sn, method, user111);
         resRepository.save(res);
         return "redirect:/";
     }
