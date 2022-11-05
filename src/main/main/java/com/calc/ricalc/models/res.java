@@ -1,19 +1,32 @@
 package com.calc.ricalc.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-
+@Table(name = "res")
 public class res {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String user, method, fn, sn, results;
+    private String user111;
+
+    public String getUser111() {
+        return user111;
+    }
+
+    public void setUser111(String user111) {
+        this.user111 = user111;
+    }
+
+    private String method;
+
+    private String fn;
+
+    private String sn;
+
+    private String results;
 
     public res(String fn, String sn, String method) {
     }
@@ -24,14 +37,6 @@ public class res {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
     }
 
     public String getMethod() {
@@ -73,6 +78,6 @@ public class res {
         this.fn = fn;
         this.sn = sn;
         this.method = method;
-        this.user = user;
+        this.user111 = user;
     }
 }
