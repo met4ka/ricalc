@@ -1,4 +1,4 @@
-package com.calc.ricalc.models;
+package com.calc.ricalc.entity;
 
 import javax.persistence.*;
 

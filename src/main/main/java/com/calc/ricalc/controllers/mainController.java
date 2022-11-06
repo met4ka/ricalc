@@ -1,7 +1,7 @@
 package com.calc.ricalc.controllers;
 
-import com.calc.ricalc.models.res;
-import com.calc.ricalc.repo.resRepository;
+import com.calc.ricalc.entity.res;
+import com.calc.ricalc.repository.resRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +21,10 @@ public class mainController {
     }
     @PostMapping("/")
     public String res(@RequestParam String fn, @RequestParam String sn, @RequestParam String method, @RequestParam String user111, Model model) {
-        res res = new res(fn, sn, method, user111);
-        resRepository.save(res);
+        res res= resRepository.findByUser111(user111);
+        if (res==null){
+            resRepository.save(new res(fn, sn, method, user111));
+        }
         return "redirect:/";
     }
 }

@@ -1,4 +1,4 @@
-package com.calc.ricalc.models;
+package com.calc.ricalc.entity;
 
 import javax.persistence.*;
 
@@ -10,7 +10,9 @@ public class post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title, anons, full_text;
+    private String title;
+    private String anons;
+    private String full_text;
     private int views;
 
     public Long getId() {
